@@ -32,5 +32,10 @@ namespace appEval
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string a = textBox2.Text;
+        }
     }
 }
