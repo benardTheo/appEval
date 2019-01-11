@@ -18,13 +18,7 @@ namespace appEval
                 conn.Open();
 
                 // Insert some data
-               /* using (var cmd = new NpgsqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = "INSERT INTO data (some_field) VALUES (@p)";
-                    cmd.Parameters.AddWithValue("p", "Hello world");
-                    cmd.ExecuteNonQuery();
-                }*/
+                
 
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand("SELECT nomPrenom_RH FROM evaluation", conn))

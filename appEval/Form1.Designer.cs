@@ -71,19 +71,21 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "validé";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 269);
+            this.ClientSize = new System.Drawing.Size(305, 249);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
-            this.MinimumSize = new System.Drawing.Size(5, 5);
+            this.MinimumSize = new System.Drawing.Size(16, 41);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
