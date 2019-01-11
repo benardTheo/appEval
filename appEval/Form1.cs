@@ -37,19 +37,8 @@ namespace appEval
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            connexion.Connect();
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
-            using (var conn = new NpgsqlConnection(connString))
-            {
-                conn.Open();
-                using (var cmd = new NpgsqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = "INSERT INTO Critere VALUES ('" + textBox2.Text + "')";
-                    cmd.Parameters.AddWithValue("p", "Hello world");
-                    cmd.ExecuteNonQuery();
-                }
-            }
+            string libelle = textBox2.Text;
+
 
         }
 
