@@ -17,16 +17,9 @@ namespace appEval
             {
                 conn.Open();
 
-                // Insert some data
                 
-                    conn.Open();
-                    using (var cmd = new NpgsqlCommand())
-                    {
-                        cmd.Connection = conn;
-                        cmd.CommandText = "INSERT INTO Critere VALUES ('" +  + "')";
-                        cmd.ExecuteNonQuery();
-                    }
-                
+                    
+                 
 
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand("SELECT nomPrenom_RH FROM evaluation", conn))
@@ -35,6 +28,23 @@ namespace appEval
                         Console.WriteLine(reader.GetString(0));
             }
 
+        }
+        public static void insertCritere(string lib)
+        {
+            // Insert some data
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
+
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "INSERT INTO Critere(idcritere,libellecritere) VALUES (6,'" + lib + "')";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            
         }
     }
 }
