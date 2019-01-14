@@ -40,7 +40,7 @@ namespace appEval
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "INSERT INTO Critere(idcritere,libellecritere) VALUES (6,'" + lib + "')";
+                    cmd.CommandText = "INSERT INTO Critere(libellecritere) VALUES ('" + lib + "')";
                     cmd.ExecuteNonQuery();
                 }
             }

@@ -38,8 +38,8 @@ namespace appEval
         public void textBox2_TextChanged(object sender, EventArgs e)
         {
             string libelle = textBox2.Text;
-            connexion.insertCritere(libelle);
-
+            
+            
         }
         
 
@@ -50,7 +50,7 @@ namespace appEval
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            connexion.insertCritere(textBox2.Text);
         }
     }
 }
