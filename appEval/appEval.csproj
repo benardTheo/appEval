@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="coeff_des_criteres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="coeff_des_criteres.Designer.cs">
+      <DependentUpon>coeff_des_criteres.cs</DependentUpon>
+    </Compile>
     <Compile Include="connexion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="coeff_des_criteres.resx">
+      <DependentUpon>coeff_des_criteres.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
