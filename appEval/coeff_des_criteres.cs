@@ -16,7 +16,7 @@ namespace appEval
         {
             InitializeComponent();
             Form1 f = new Form1();
-            textBox2.Text = connexion.selectIDC();
+            textBox2.Text = connexion.selectLibC();
         }
     
 
@@ -38,6 +38,24 @@ namespace appEval
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int id = connexion.selectIdC(textBox2.Text);
+            connexion.insertAssocier(id, textBox3.Text, textBox1.Text);
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
