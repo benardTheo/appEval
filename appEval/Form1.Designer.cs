@@ -44,7 +44,6 @@
             this.label1.Size = new System.Drawing.Size(81, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "critere";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // textBox2
             // 
@@ -59,7 +58,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.Size = new System.Drawing.Size(94, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "libelle du critere";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -78,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 308);
+            this.ClientSize = new System.Drawing.Size(305, 249);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);

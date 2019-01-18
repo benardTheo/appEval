@@ -52,10 +52,5 @@ namespace appEval
         {
             connexion.insertCritere(textBox2.Text);
         }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
