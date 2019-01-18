@@ -46,7 +46,7 @@ namespace appEval
             }
 
         }
-        public static void insertAssocier(int id, string code, string coef)
+        public static void insertAssocier(int id, int code, string coef)
         {
 
             // Insert some data
@@ -107,6 +107,27 @@ namespace appEval
                     }
             }
             return 0;
+        }
+
+        public static int selectCodeOffre(string lib)
+        {
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
+
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                // Retrieve all rows
+                using (var cmd = new NpgsqlCommand("SELECT codeEmploi FROM offre_emploi WHERE libelle = '" + lib + "';", conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(reader.GetInt32(0));
+                        return reader.GetInt32(0);
+                    }
+            }
+            return 0;
+
         }
 
 

@@ -49,7 +49,8 @@ namespace appEval
         {
             
             int id = connexion.selectIdC(textBox2.Text);
-            connexion.insertAssocier(id, textBox3.Text, textBox1.Text);
+            int code = connexion.selectCodeOffre(listBox1.Text);
+            connexion.insertAssocier(id, code, textBox1.Text);
 
 
         }
