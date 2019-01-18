@@ -17,9 +17,9 @@ namespace appEval
             {
                 conn.Open();
 
-                
-                    
-                 
+
+
+
 
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand("SELECT nomPrenom_RH FROM evaluation", conn))
@@ -44,9 +44,9 @@ namespace appEval
                     cmd.ExecuteNonQuery();
                 }
             }
-            
+
         }
-        public static void insertAssocier(string lib, string coef)
+        public static void insertAssocier(int id, string code, string coef)
         {
 
             // Insert some data
@@ -56,20 +56,19 @@ namespace appEval
             {
                 conn.Open();
 
-                
+
 
                 using (var cmd = new NpgsqlCommand())
                 {
-                    var query = new NpgsqlCommand("SELECT idCritere FROM Critere ", conn);
-                    var crit = cmd.ExecuteReader();
+
                     cmd.Connection = conn;
-                    cmd.CommandText = "INSERT INTO ASSOCIER(codeemploi,coeff) VALUES ("+ crit + ",4," + coef + ");" + "INSERT INTO Critere(libellecritere) VALUES ('" + lib + "');";
+                    cmd.CommandText = "INSERT INTO ASSOCIER(idCritere,codeemploi,coeff) VALUES (" + id + "," + code + "," + coef + ")";
                     cmd.ExecuteNonQuery();
                 }
             }
 
         }
-        public static string selectIDC()
+        public static string selectLibC()
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
 
@@ -87,12 +86,35 @@ namespace appEval
                     }
             }
             return "non";
-            
+
         }
-        
-        
+
+        public static int selectIdC(string lib)
+        {
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
+
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                // Retrieve all rows
+                using (var cmd = new NpgsqlCommand("SELECT idCritere FROM Critere Where libelleCritere = '" + lib + "';", conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(reader.GetInt32(0));
+                        return reader.GetInt32(0);
+                    }
+            }
+            return 0;
+        }
+
+
+
+
+
     }
 
- }
+}
 
 

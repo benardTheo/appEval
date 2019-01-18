@@ -17,17 +17,22 @@ namespace appEval
             InitializeComponent();
             Form1 f = new Form1();
             textBox2.Text = connexion.selectLibC();
+
+            foreach (offre o in DAOoffre.afficherEmplois())
+            {
+                listBox1.Items.Add(o.GetLibelle());
+            }
         }
-    
+
 
         private void label2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-                       
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,11 +42,12 @@ namespace appEval
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             int id = connexion.selectIdC(textBox2.Text);
             connexion.insertAssocier(id, textBox3.Text, textBox1.Text);
 
@@ -54,6 +60,11 @@ namespace appEval
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
