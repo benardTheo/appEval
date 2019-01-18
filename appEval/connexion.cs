@@ -11,15 +11,13 @@ namespace appEval
     {
         public static void Connect()
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
 
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
 
-                
                     
-                 
 
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand("SELECT nomPrenom_RH FROM evaluation", conn))
@@ -32,7 +30,7 @@ namespace appEval
         public static void insertCritere(string lib)
         {
             // Insert some data
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
 
             using (var conn = new NpgsqlConnection(connString))
             {
@@ -46,6 +44,8 @@ namespace appEval
             }
             
         }
+
+       
     }
 }
 
