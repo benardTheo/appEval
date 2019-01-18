@@ -21,11 +21,8 @@ namespace appEval
             {
                 listBox1.Items.Add(o.GetLibelle());
             }
-
-            foreach(candidature c in DAOcandidature.AfficherCandidature())
-            {
-                listBox2.Items.Add(c.GetCodeCandidat());
-            }
+             
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -35,7 +32,17 @@ namespace appEval
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            
+            foreach (candidature c in DAOcandidature.AfficherCandidature(DAOcandidature.selectlibE(listBox1.Text)))
+            {
+                listBox2.Items.Add(c.GetCodeCandidat());
+            }
+            
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

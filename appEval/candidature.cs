@@ -8,15 +8,15 @@ namespace appEval
 {
     public class candidature
     {
-        private string codeCandidat;
+        private int codeCandidat;
 
 
-        public candidature(string unCodeCandidat)
+        public candidature(int unCodeCandidat)
         {
             this.codeCandidat = unCodeCandidat;
         }
 
-        public string GetCodeCandidat()
+        public int GetCodeCandidat()
         {
             return this.codeCandidat;
         }
