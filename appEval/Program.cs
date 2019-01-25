@@ -16,7 +16,7 @@ namespace appEval
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Evaluation());
+            Application.Run(new Form2());
            
         }
     }
