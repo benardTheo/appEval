@@ -19,7 +19,8 @@ namespace appEval
             InitializeComponent();
             connexion.Connect();
         }
-
+        
+       
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -37,10 +38,9 @@ namespace appEval
 
         public void textBox2_TextChanged(object sender, EventArgs e)
         {
-            string libelle = textBox2.Text;
-            
-            
+           string libelle = textBox2.Text;
         }
+        
         
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,11 +51,13 @@ namespace appEval
         private void button1_Click(object sender, EventArgs e)
         {
             connexion.insertCritere(textBox2.Text);
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
+            coeff_des_criteres c = new coeff_des_criteres();
+            c.Show();
 
         }
+
+       
+
+        
     }
 }

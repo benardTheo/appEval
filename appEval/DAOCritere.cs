@@ -7,13 +7,12 @@ using Npgsql;
 
 namespace appEval
 {
-    public class DAOoffre
+    public class DAOCritere
     {
-
-        public static List<offre> afficherEmplois()
+        public static List<Critere> LibelleCritere()
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
-            List<offre> lesOffres = new List<offre>();
+            List<Critere> lesCritere = new List<Critere>();
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
@@ -21,19 +20,20 @@ namespace appEval
 
 
                 // Retrieve all rows
-                using (var cmd = new NpgsqlCommand("SELECT codeemploi, libelle FROM offre_emploi", conn))
+                using (var cmd = new NpgsqlCommand("SELECT libelleCritere FROM critere", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
-                        offre uneOffre = new offre(reader.GetString(1), reader.GetInt32(0));
-                        lesOffres.Add(uneOffre);
+                        Critere unCritere = new Critere(reader.GetString(0));
+                        lesCritere.Add(unCritere);
 
 
                     }
 
             }
-            return lesOffres;
+            return lesCritere;
 
         }
+
     }
 }

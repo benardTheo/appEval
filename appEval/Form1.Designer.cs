@@ -44,13 +44,12 @@
             this.label1.Size = new System.Drawing.Size(81, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "critere";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 114);
+            this.textBox2.Location = new System.Drawing.Point(103, 114);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 20);
+            this.textBox2.Size = new System.Drawing.Size(175, 20);
             this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -66,7 +65,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(76, 191);
+            this.button1.Location = new System.Drawing.Point(81, 183);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 43);
             this.button1.TabIndex = 5;
@@ -78,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 308);
+            this.ClientSize = new System.Drawing.Size(309, 253);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
