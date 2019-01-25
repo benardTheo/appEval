@@ -19,7 +19,7 @@ namespace appEval
 
             foreach (Critere c in DAOCritere.LibelleCritere() )
             {
-                listBoxEval.Items.Add(c.LibelleCritere);
+                listBox1.Items.Add(c.LibelleCritere);
             }
             textBox1.Text = id.ToString() ;
             
