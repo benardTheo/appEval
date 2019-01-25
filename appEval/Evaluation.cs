@@ -12,9 +12,10 @@ namespace appEval
 {
     public partial class Evaluation : Form
     {
-        public Evaluation(int idOffre)
+        public Evaluation(int idOffre, string idCandidat)
         {
             int id = idOffre;
+            string idC1 = idCandidat;
             InitializeComponent();
 
             foreach (Critere c in DAOEvaluation.AfficherCritere(id) )
