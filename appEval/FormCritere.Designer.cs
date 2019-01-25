@@ -1,6 +1,6 @@
 ﻿namespace appEval
 {
-    partial class Form1
+    partial class FormCritere
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

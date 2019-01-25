@@ -47,7 +47,7 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(415, 108);
+            this.listBox2.Location = new System.Drawing.Point(336, 108);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(211, 316);
             this.listBox2.TabIndex = 1;
@@ -65,7 +65,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(412, 57);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(397, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 3;
@@ -74,12 +75,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(686, 230);
+            this.button1.Location = new System.Drawing.Point(611, 205);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 30);
+            this.button1.Size = new System.Drawing.Size(88, 48);
             this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
+            this.button1.Text = "Evaluer";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 
@@ -93,6 +95,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

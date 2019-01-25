@@ -12,9 +12,9 @@ using Npgsql;
 
 namespace appEval
 {
-    public partial class Form1 : Form
+    public partial class FormCritere : Form
     {
-        public Form1()
+        public FormCritere()
         {
             InitializeComponent();
             connexion.Connect();

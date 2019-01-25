@@ -12,15 +12,17 @@ namespace appEval
 {
     public partial class Evaluation : Form
     {
-        public Evaluation()
+        public Evaluation(int idOffre)
         {
+            int id = idOffre;
             InitializeComponent();
 
             foreach (Critere c in DAOCritere.LibelleCritere() )
             {
-                listBox1.Items.Add(c.LibelleCritere);
+                listBoxEval.Items.Add(c.LibelleCritere);
             }
-            textBox1.Text = DAOEvaluation.insertEvaluation();
+            textBox1.Text = id.ToString() ;
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace appEval
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)

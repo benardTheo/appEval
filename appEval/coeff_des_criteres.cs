@@ -15,7 +15,7 @@ namespace appEval
         public coeff_des_criteres()
         {
             InitializeComponent();
-            Form1 f = new Form1();
+            FormCritere f = new FormCritere();
             textBox2.Text = connexion.selectLibC();
 
             foreach (offre o in DAOoffre.afficherEmplois())
