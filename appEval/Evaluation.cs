@@ -12,9 +12,10 @@ namespace appEval
 {
     public partial class Evaluation : Form
     {
-        public Evaluation(int idOffre)
+        public Evaluation(int idOffre,string idCandidat)
         {
             int id = idOffre;
+            string idCa = idCandidat;
             InitializeComponent();
 
             foreach (Critere c in DAOEvaluation.AfficherCritere(id) )
@@ -22,6 +23,7 @@ namespace appEval
                 listBox1.Items.Add(c.LibelleCritere);
             }
             textBox1.Text = id.ToString() ;
+            textBox3.Text = idCa;
             
         }
 
@@ -57,11 +59,15 @@ namespace appEval
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-                DAOEvaluation.insertEvaluation(textBox1.Text, comboBox2.Text, textBox2.Text);
+            DAOEvaluation.insertEvaluation(textBox1.Text, comboBox2.Text, textBox2.Text, textBox3.Text);
 
-                DAOEvaluation.insertNote(DAOEvaluation.selectIDEval(), note.Text);
+                DAOEvaluation.insertNote(DAOEvaluation.selectIDEval(),connexion.selectIdC(listBox1.Text) ,note.Text);
             
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
