@@ -69,6 +69,7 @@
     <Compile Include="Critere.cs" />
     <Compile Include="DAOcandidature.cs" />
     <Compile Include="DAOCritere.cs" />
+    <Compile Include="DAOEvaluation.cs" />
     <Compile Include="DAOoffre.cs" />
     <Compile Include="Evaluation.cs">
       <SubType>Form</SubType>

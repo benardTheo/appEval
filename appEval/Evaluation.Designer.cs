@@ -100,11 +100,12 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(195, 20);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // commentaire
             // 
             this.commentaire.AutoSize = true;
-            this.commentaire.Location = new System.Drawing.Point(20, 185);
+            this.commentaire.Location = new System.Drawing.Point(20, 182);
             this.commentaire.Name = "commentaire";
             this.commentaire.Size = new System.Drawing.Size(67, 13);
             this.commentaire.TabIndex = 9;

@@ -20,6 +20,7 @@ namespace appEval
             {
                 listBox1.Items.Add(c.LibelleCritere);
             }
+            textBox1.Text = DAOEvaluation.insertEvaluation();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -43,6 +44,11 @@ namespace appEval
         }
 
         private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }

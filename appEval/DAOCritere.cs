@@ -34,15 +34,6 @@ namespace appEval
             return lesCritere;
 
         }
-        public void insertNote()
-        {
 
-        }
-
-        public static void insertEvaluation()
-        {
-
-            DateTime date = new DateTime.
-        }
     }
 }
