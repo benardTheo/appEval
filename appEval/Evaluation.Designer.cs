@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.note = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -39,22 +39,27 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // note
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.note.FormattingEnabled = true;
+            this.note.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
             "3",
             "4",
-            "5"});
-            this.comboBox1.Location = new System.Drawing.Point(214, 107);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "choisir la note";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.note.Location = new System.Drawing.Point(214, 107);
+            this.note.Name = "note";
+            this.note.Size = new System.Drawing.Size(121, 21);
+            this.note.TabIndex = 1;
+            this.note.Text = "choisir la note";
+            this.note.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -83,6 +88,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Validé";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -165,7 +171,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.note);
             this.Name = "Evaluation";
             this.Text = "Evaluation";
             this.ResumeLayout(false);
@@ -175,7 +181,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox note;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;

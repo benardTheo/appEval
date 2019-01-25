@@ -20,7 +20,7 @@ namespace appEval
             {
                 listBox1.Items.Add(c.LibelleCritere);
             }
-            textBox1.Text = DAOEvaluation.insertEvaluation();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -51,6 +51,13 @@ namespace appEval
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DAOEvaluation.insertEvaluation(textBox1.Text, comboBox2.Text, textBox2.Text);
+            
+            DAOEvaluation.insertNote(DAOEvaluation.selectIDEval(),note.Text);
         }
     }
 }
