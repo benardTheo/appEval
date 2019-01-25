@@ -54,5 +54,16 @@ namespace appEval
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+
+                DAOEvaluation.insertEvaluation(textBox1.Text, comboBox2.Text, textBox2.Text);
+
+                DAOEvaluation.insertNote(DAOEvaluation.selectIDEval(), note.Text);
+            
+
+        }
     }
 }
