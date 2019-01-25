@@ -32,17 +32,21 @@ namespace appEval
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+           
+            listBox2.Items.Clear();
             foreach (candidature c in DAOcandidature.AfficherCandidature(DAOcandidature.selectlibE(listBox1.Text)))
             {
+                
                 listBox2.Items.Add(c.GetCodeCandidat());
+                
             }
+            
             
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+          
         }
     }
 }
