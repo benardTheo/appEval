@@ -48,7 +48,7 @@ namespace appEval
         }
         public static void insertAssocier(int id, int code, string coef)
         {
-
+             
             // Insert some data
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
 
