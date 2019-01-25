@@ -17,7 +17,7 @@ namespace appEval
             int id = idOffre;
             InitializeComponent();
 
-            foreach (Critere c in DAOCritere.LibelleCritere() )
+            foreach (Critere c in DAOEvaluation.AfficherCritere(id) )
             {
                 listBox1.Items.Add(c.LibelleCritere);
             }
@@ -51,6 +51,11 @@ namespace appEval
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

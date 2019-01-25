@@ -54,7 +54,7 @@
             "8",
             "9",
             "10"});
-            this.note.Location = new System.Drawing.Point(214, 107);
+            this.note.Location = new System.Drawing.Point(350, 82);
             this.note.Name = "note";
             this.note.Size = new System.Drawing.Size(121, 21);
             this.note.TabIndex = 1;
@@ -74,9 +74,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(59, 98);
+            this.listBox1.Location = new System.Drawing.Point(46, 48);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(124, 95);
+            this.listBox1.Size = new System.Drawing.Size(168, 225);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -88,12 +88,12 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Validé";
             this.button1.UseVisualStyleBackColor = true;
-            
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 215);
+            this.label2.Location = new System.Drawing.Point(269, 208);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(68, 13);
@@ -102,7 +102,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 212);
+            this.textBox1.Location = new System.Drawing.Point(376, 201);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(195, 20);
             this.textBox1.TabIndex = 7;
@@ -111,7 +111,7 @@
             // commentaire
             // 
             this.commentaire.AutoSize = true;
-            this.commentaire.Location = new System.Drawing.Point(57, 246);
+            this.commentaire.Location = new System.Drawing.Point(243, 282);
             this.commentaire.Name = "commentaire";
             this.commentaire.Size = new System.Drawing.Size(67, 13);
             this.commentaire.TabIndex = 9;
@@ -119,10 +119,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(143, 246);
+            this.textBox2.Location = new System.Drawing.Point(350, 255);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 73);
+            this.textBox2.Size = new System.Drawing.Size(274, 73);
             this.textBox2.TabIndex = 10;
             // 
             // comboBox2
@@ -152,7 +152,7 @@
             "3",
             "4",
             "5"});
-            this.comboBox2.Location = new System.Drawing.Point(214, 154);
+            this.comboBox2.Location = new System.Drawing.Point(350, 139);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 11;
@@ -162,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 400);
+            this.ClientSize = new System.Drawing.Size(658, 400);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.commentaire);

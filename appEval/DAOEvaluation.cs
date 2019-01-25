@@ -81,6 +81,32 @@ namespace appEval
 
         }
 
+        public static List<Critere> AfficherCritere(int idOffre)
+        {
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5432";
+            List<Critere> lesCriteres = new List<Critere>();
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+
+
+                // Retrieve all rows
+                using (var cmd = new NpgsqlCommand("SELECT libellecritere FROM critere C INNER JOIN associer A ON C.idcritere = A.idcritere  WHERE codeEmploi = '" + idOffre + "'", conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        Critere unCritere = new Critere(reader.GetString(0));
+                        lesCriteres.Add(unCritere);
+
+
+                    }
+
+            }
+            return lesCriteres;
+
+        }
+
     }
 }
 
