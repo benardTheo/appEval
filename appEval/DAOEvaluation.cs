@@ -14,7 +14,7 @@ namespace appEval
 
         }
 
-        public static void  insertEvaluation(string nom, string bonus ,string comm)
+        public static void  insertEvaluation(string nom, string bonus ,string comm, string idCa)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
             DateTime date = new DateTime();
@@ -31,13 +31,13 @@ namespace appEval
 
                     cmd.Connection = conn;
                     cmd.CommandText = "INSERT INTO EVALUATION( nomPrenom_RH, dateEval, Bonus_Malus, commentaire, codeCandidat) " +
-                        "VALUES ('" + nom + "','" + date + "'," + bonus + ", '" + comm + "', 1);";
+                        "VALUES ('" + nom + "','" + date + "'," + bonus + ", '" + comm + "', " + idCa + ");";
                     cmd.ExecuteNonQuery();
                 }
             }
 
         }
-        public static void insertNote(int id,string note)
+        public static void insertNote(int id,int idC,string note)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
            
@@ -52,7 +52,7 @@ namespace appEval
                 {
 
                     cmd.Connection = conn;
-                    cmd.CommandText = "INSERT INTO Noter(idEvaluation ,idCritere,note) VALUES( "+ id+",1," + note + ")";
+                    cmd.CommandText = "INSERT INTO Noter(idEvaluation ,idCritere,note) VALUES( "+ id+","+ idC+"," + note + ")";
 
 
                     cmd.ExecuteNonQuery();
