@@ -11,7 +11,7 @@ namespace appEval
     {
         public static List<Critere> LibelleCritere()
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
             List<Critere> lesCritere = new List<Critere>();
             using (var conn = new NpgsqlConnection(connString))
             {

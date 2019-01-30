@@ -51,7 +51,10 @@ namespace appEval
             int id = connexion.selectIdC(textBox2.Text);
             int code = connexion.selectCodeOffre(listBox1.Text);
             connexion.insertAssocier(id, code, textBox1.Text);
-            
+
+
+            MessageBox.Show("Vous avez bien ajouter un nouveau critère", "Vous avez bien ajouter un nouveau critère", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

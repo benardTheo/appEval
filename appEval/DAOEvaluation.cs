@@ -14,9 +14,9 @@ namespace appEval
 
         }
 
-        public static void  insertEvaluation(string nom, string bonus ,string comm, string idCa)
+        public static void insertEvaluation(string nom, string bonus, string comm, string idCa)
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
             DateTime date = new DateTime();
             date = DateTime.Now;
 
@@ -37,10 +37,9 @@ namespace appEval
             }
 
         }
-        public static void insertNote(int id,int idC,string note)
+        public static void insertNote(int id, int idC, int note)
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
-           
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
 
             using (var conn = new NpgsqlConnection(connString))
             {
@@ -52,7 +51,7 @@ namespace appEval
                 {
 
                     cmd.Connection = conn;
-                    cmd.CommandText = "INSERT INTO Noter(idEvaluation ,idCritere,note) VALUES( "+ id+","+ idC+"," + note + ")";
+                    cmd.CommandText = "INSERT INTO Noter(idEvaluation ,idCritere,note) VALUES( " + id + "," + idC + "," + note + ")";
 
 
                     cmd.ExecuteNonQuery();
@@ -62,7 +61,7 @@ namespace appEval
         }
         public static int selectIDEval()
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
 
             using (var conn = new NpgsqlConnection(connString))
             {
@@ -83,7 +82,7 @@ namespace appEval
 
         public static List<Critere> AfficherCritere(int idOffre)
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5432";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
             List<Critere> lesCriteres = new List<Critere>();
             using (var conn = new NpgsqlConnection(connString))
             {
@@ -107,6 +106,30 @@ namespace appEval
 
         }
 
+
+        public static int coefEtCrit(int idCritere, int note)
+        {
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+
+
+                // Retrieve all rows
+                using (var cmd = new NpgsqlCommand("SELECT coeff FROM associer  WHERE idcritere = '" + idCritere + "'", conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(reader.GetInt32(0));
+                        return reader.GetInt32(0);
+                    }
+                return 0;
+
+            }
+        }
     }
-}
+        
+}   
+
 

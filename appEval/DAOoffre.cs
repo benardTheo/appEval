@@ -12,7 +12,7 @@ namespace appEval
 
         public static List<offre> afficherEmplois()
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
             List<offre> lesOffres = new List<offre>();
             using (var conn = new NpgsqlConnection(connString))
             {
