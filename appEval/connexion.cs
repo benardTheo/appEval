@@ -15,19 +15,13 @@ namespace appEval
 
             using (var conn = new NpgsqlConnection(connString))
             {
-                conn.Open();
-
-
-
-
-
+                conn.Open();     
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand("SELECT nomPrenom_RH FROM evaluation", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                         Console.WriteLine(reader.GetString(0));
             }
-
         }
         public static void insertCritere(string lib)
         {
@@ -56,17 +50,13 @@ namespace appEval
             {
                 conn.Open();
 
-
-
                 using (var cmd = new NpgsqlCommand())
                 {
-
                     cmd.Connection = conn;
                     cmd.CommandText = "INSERT INTO ASSOCIER(idCritere,codeemploi,coeff) VALUES (" + id + "," + code + "," + coef + ")";
                     cmd.ExecuteNonQuery();
                 }
             }
-
         }
         public static string selectLibC()
         {
@@ -75,7 +65,6 @@ namespace appEval
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand("SELECT libelleCritere FROM Critere order by idCritere DESC limit 1;", conn))
                 using (var reader = cmd.ExecuteReader())
@@ -108,7 +97,6 @@ namespace appEval
             }
             return 0;
         }
-
         public static int selectCodeOffre(string lib)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";

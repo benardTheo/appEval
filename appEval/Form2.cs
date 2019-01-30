@@ -68,5 +68,11 @@ namespace appEval
             FormCritere c = new FormCritere(ev1);
             c.Show();
         }
+
+        private void listeEval_Click(object sender, EventArgs e)
+        {
+            listeEval eval = new listeEval();
+            eval.Show();
+        }
     }
 }

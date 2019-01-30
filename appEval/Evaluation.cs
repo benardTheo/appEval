@@ -24,7 +24,6 @@ namespace appEval
             }
             textBox1.Text = id.ToString() ;
             textBox3.Text = idCa;
-            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
