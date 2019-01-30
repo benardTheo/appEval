@@ -12,7 +12,7 @@ namespace appEval
 
         public static List<candidature> AfficherCandidature(int idOffre)
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
             List<candidature> lesCandidature = new List<candidature>();
             using (var conn = new NpgsqlConnection(connString))
             {
@@ -38,7 +38,7 @@ namespace appEval
 
         public static int selectlibE(string lib)
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
 
             using (var conn = new NpgsqlConnection(connString))
             {

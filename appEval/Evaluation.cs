@@ -59,11 +59,11 @@ namespace appEval
         private void button1_Click(object sender, EventArgs e)
         {
            int id_crit = connexion.selectIdC(listBox1.Text);
-            int note1 = int.Parse(note.Text);
+           int note1 = int.Parse(note.Text);
            int coeff =  DAOEvaluation.coefEtCrit(id_crit,note1);
-            DAOEvaluation.insertEvaluation(textBox1.Text, comboBox2.Text, textBox2.Text, textBox3.Text);
-            int noteF = coeff * note1;
-                DAOEvaluation.insertNote(DAOEvaluation.selectIDEval(),connexion.selectIdC(listBox1.Text) ,noteF);
+           DAOEvaluation.insertEvaluation(textBox1.Text, comboBox2.Text, textBox2.Text, textBox3.Text);
+           int noteF = coeff * note1;
+           DAOEvaluation.insertNote(DAOEvaluation.selectIDEval(),connexion.selectIdC(listBox1.Text) ,noteF);
 
 
             MessageBox.Show("Evaluation", "Evaluation faite", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);

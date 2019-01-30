@@ -11,7 +11,7 @@ namespace appEval
     {
         public static void Connect()
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
 
             using (var conn = new NpgsqlConnection(connString))
             {
@@ -26,7 +26,7 @@ namespace appEval
         public static void insertCritere(string lib)
         {
             // Insert some data
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
 
             using (var conn = new NpgsqlConnection(connString))
             {
@@ -44,7 +44,7 @@ namespace appEval
         {
              
             // Insert some data
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
 
             using (var conn = new NpgsqlConnection(connString))
             {
@@ -60,7 +60,7 @@ namespace appEval
         }
         public static string selectLibC()
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
 
             using (var conn = new NpgsqlConnection(connString))
             {
@@ -80,7 +80,7 @@ namespace appEval
 
         public static int selectIdC(string lib)
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
 
             using (var conn = new NpgsqlConnection(connString))
             {
@@ -99,7 +99,7 @@ namespace appEval
         }
         public static int selectCodeOffre(string lib)
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;port=5433";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
 
             using (var conn = new NpgsqlConnection(connString))
             {
