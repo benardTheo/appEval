@@ -12,16 +12,13 @@ namespace appEval
 {
     public partial class coeff_des_criteres : Form
     {
-        public coeff_des_criteres()
+        private int id_offre;
+        public coeff_des_criteres(int id)
         {
-            InitializeComponent();
-            FormCritere f = new FormCritere();
+            id_offre = id;
+            InitializeComponent();           
             textBox2.Text = connexion.selectLibC();
-
-            foreach (offre o in DAOoffre.afficherEmplois())
-            {
-                listBox1.Items.Add(o.GetLibelle());
-            }
+            
         }
 
 
@@ -49,9 +46,13 @@ namespace appEval
         {
             
             int id = connexion.selectIdC(textBox2.Text);
-            int code = connexion.selectCodeOffre(listBox1.Text);
-            connexion.insertAssocier(id, code, textBox1.Text);
             
+            connexion.insertAssocier(id, id_offre, textBox1.Text);
+            Form2 acceuil = new Form2();
+            this.Close();
+            
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -65,6 +66,11 @@ namespace appEval
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged_1(object sender, EventArgs e)
         {
 
         }

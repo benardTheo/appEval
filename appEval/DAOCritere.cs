@@ -9,7 +9,7 @@ namespace appEval
 {
     public class DAOCritere
     {
-        public static List<Critere> LibelleCritere()
+        public static List<Critere> LibelleCritere( int idOffre)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
             List<Critere> lesCritere = new List<Critere>();
@@ -20,7 +20,7 @@ namespace appEval
 
 
                 // Retrieve all rows
-                using (var cmd = new NpgsqlCommand("SELECT libelleCritere FROM critere", conn))
+                using (var cmd = new NpgsqlCommand("SELECT libelleCritere FROM critere ", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {

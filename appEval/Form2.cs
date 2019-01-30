@@ -61,5 +61,12 @@ namespace appEval
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int ev1 = DAOcandidature.selectlibE(listBox1.Text);
+            FormCritere c = new FormCritere(ev1);
+            c.Show();
+        }
     }
 }
