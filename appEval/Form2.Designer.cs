@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.listeEval = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -75,19 +77,41 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(611, 205);
+            this.button1.Location = new System.Drawing.Point(624, 249);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 48);
+            this.button1.Size = new System.Drawing.Size(107, 48);
             this.button1.TabIndex = 4;
             this.button1.Text = "Evaluer";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(624, 144);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 57);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "ajouté un critere";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // listeEval
+            // 
+            this.listeEval.Location = new System.Drawing.Point(626, 344);
+            this.listeEval.Name = "listeEval";
+            this.listeEval.Size = new System.Drawing.Size(104, 47);
+            this.listeEval.TabIndex = 6;
+            this.listeEval.Text = "liste des evaluations";
+            this.listeEval.UseVisualStyleBackColor = true;
+            this.listeEval.Click += new System.EventHandler(this.listeEval_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listeEval);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -108,5 +132,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button listeEval;
     }
 }
