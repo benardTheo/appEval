@@ -92,6 +92,8 @@ namespace appEval
            string lib = listBox1.Text;
 
             DAOoffre.definirDateLimit(d, lib);
+
+            MessageBox.Show("Date limite ajoutée", "Date", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
         }
     }
 }

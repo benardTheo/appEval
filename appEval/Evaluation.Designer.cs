@@ -218,6 +218,7 @@
             this.Controls.Add(this.note);
             this.Name = "Evaluation";
             this.Text = "Evaluation";
+            this.Load += new System.EventHandler(this.Evaluation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
