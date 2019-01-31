@@ -119,10 +119,13 @@
             // 
             // dateL
             // 
+            this.dateL.CustomFormat = "MM/dd/yyyy";
+            this.dateL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateL.Location = new System.Drawing.Point(588, 57);
             this.dateL.Name = "dateL";
             this.dateL.Size = new System.Drawing.Size(200, 20);
             this.dateL.TabIndex = 8;
+            this.dateL.Value = new System.DateTime(2019, 2, 2, 0, 0, 0, 0);
             this.dateL.ValueChanged += new System.EventHandler(this.dateL_ValueChanged);
             // 
             // button3

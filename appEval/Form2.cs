@@ -90,8 +90,8 @@ namespace appEval
         {
            string d =  dateL.Text;
            string lib = listBox1.Text;
-           DateTime dateLimite = DateTime.Parse(d);
-           DAOoffre.definirDateLimit(dateLimite, lib);
+
+            DAOoffre.definirDateLimit(d, lib);
         }
     }
 }

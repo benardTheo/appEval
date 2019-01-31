@@ -16,11 +16,8 @@ namespace appEval
         {
             InitializeComponent();
             textBox3.Text = id.ToString();
-            textBox2.Text = connexion.selectLibC();
-
-          
+            textBox2.Text = connexion.selectLibC();     
         }
-
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -48,7 +45,6 @@ namespace appEval
             int id = connexion.selectIdC(textBox2.Text);
             int code = int.Parse(textBox3.Text);
             connexion.insertAssocier(id, code, textBox1.Text);
-
 
             MessageBox.Show("Vous avez bien ajouter un nouveau critère", "Vous avez bien ajouter un nouveau critère", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
             this.Close();
