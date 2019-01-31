@@ -75,5 +75,23 @@ namespace appEval
             listeEval eval = new listeEval();
             eval.Show();
         }
+
+        private void dateL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateL_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           string d =  dateL.Text;
+           string lib = listBox1.Text;
+           DateTime dateLimite = DateTime.Parse(d);
+           DAOoffre.definirDateLimit(dateLimite, lib);
+        }
     }
 }

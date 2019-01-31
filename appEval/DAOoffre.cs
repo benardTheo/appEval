@@ -35,5 +35,29 @@ namespace appEval
             return lesOffres;
 
         }
+
+
+
+        public static void definirDateLimit(DateTime dateLimit, string lib)
+        {
+            var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
+           
+
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+
+
+                using (var cmd = new NpgsqlCommand())
+                {
+
+                    cmd.Connection = conn;
+                    cmd.CommandText = "UPDATE offre_emploi SET date_limit = " + dateLimit + " WHERE libelle = "+lib+" ";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+        }
     }
 }
