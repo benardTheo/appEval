@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(585, 478);
             this.Name = "listeEval";
             this.Text = "listeEval";
+            this.Load += new System.EventHandler(this.listeEval_Load);
             this.ResumeLayout(false);
 
         }
