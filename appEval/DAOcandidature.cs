@@ -9,7 +9,6 @@ namespace appEval
 {
     public class DAOcandidature
     {
-
         public static List<candidature> AfficherCandidature(int idOffre)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
@@ -17,9 +16,6 @@ namespace appEval
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-
-
-
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand("SELECT codeCandidat FROM candidature  WHERE codeEmploi = '" + idOffre + "'", conn))
                 using (var reader = cmd.ExecuteReader())
@@ -27,23 +23,17 @@ namespace appEval
                     {
                         candidature uneCandidature = new candidature(reader.GetInt32(0));
                         lesCandidature.Add(uneCandidature);
-
-
                     }
-
             }
             return lesCandidature;
-
         }
 
         public static int selectlibE(string lib)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
-
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand("SELECT codeemploi FROM offre_emploi Where libelle = '" + lib + "';", conn))
                 using (var reader = cmd.ExecuteReader())

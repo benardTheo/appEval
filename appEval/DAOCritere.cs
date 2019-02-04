@@ -16,9 +16,6 @@ namespace appEval
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-
-
-
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand("SELECT libelleCritere FROM critere ", conn))
                 using (var reader = cmd.ExecuteReader())
@@ -26,14 +23,9 @@ namespace appEval
                     {
                         Critere unCritere = new Critere(reader.GetString(0));
                         lesCritere.Add(unCritere);
-
-
                     }
-
             }
             return lesCritere;
-
         }
-
     }
 }

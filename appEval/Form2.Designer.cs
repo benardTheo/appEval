@@ -119,7 +119,7 @@
             // 
             // dateL
             // 
-            this.dateL.CustomFormat = "MM/dd/yyyy";
+            this.dateL.CustomFormat = "yyyy/MM/dd";
             this.dateL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateL.Location = new System.Drawing.Point(588, 57);
             this.dateL.Name = "dateL";

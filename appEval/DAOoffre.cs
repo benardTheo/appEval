@@ -16,7 +16,6 @@ namespace appEval
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand("SELECT codeemploi, libelle FROM offre_emploi", conn))
                 using (var reader = cmd.ExecuteReader())
@@ -32,11 +31,9 @@ namespace appEval
         public static void definirDateLimit(string dateLimit, string lib)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
-           
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
@@ -44,7 +41,6 @@ namespace appEval
                     cmd.ExecuteNonQuery();
                 }
             }
-
         }
     }
 }
