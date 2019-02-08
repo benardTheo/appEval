@@ -22,8 +22,9 @@ namespace appEval
             this.dataGridView1[0, 2].Value = "3";
             this.dataGridView1[0, 3].Value = "4";
             this.dataGridView1[0, 4].Value = "5";
-
-
+            Dictionary<int, double> moy = new Dictionary<int, double>();
+            moy = DAOresultatEval.afficherMoy();
+            
 
         }
 
@@ -43,6 +44,7 @@ namespace appEval
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
         }
     }
 }

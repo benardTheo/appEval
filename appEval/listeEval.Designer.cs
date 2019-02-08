@@ -54,7 +54,7 @@
             this.Classement,
             this.Liste_candidats,
             this.Note_moyenne});
-            this.dataGridView1.Location = new System.Drawing.Point(47, 105);
+            this.dataGridView1.Location = new System.Drawing.Point(111, 115);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(343, 225);
             this.dataGridView1.TabIndex = 1;
