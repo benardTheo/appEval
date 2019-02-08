@@ -21,10 +21,10 @@ namespace appEval
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
-                        moy[reader.GetInt32(0)] = reader.GetDouble(0);
+                        moy[reader.GetInt32(0)] = reader.GetDouble(1);
+
                     }
             }
-            Console.WriteLine(moy);
             return moy ;
         }
     }

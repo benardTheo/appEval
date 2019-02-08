@@ -24,8 +24,15 @@ namespace appEval
             this.dataGridView1[0, 4].Value = "5";
             Dictionary<int, double> moy = new Dictionary<int, double>();
             moy = DAOresultatEval.afficherMoy();
-            
+            int i = 0;
+            foreach(KeyValuePair<int,double> elem in moy)
+            {
+                dataGridView1.Rows[i].Cells[1].Value = elem.Key.ToString();
+                dataGridView1.Rows[i].Cells[2].Value = elem.Value.ToString();
+                i++;
+            }
 
+            
         }
 
         /*
