@@ -111,28 +111,29 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(585, 27);
+            this.label3.Location = new System.Drawing.Point(535, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Date limite";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dateL
             // 
             this.dateL.CustomFormat = "yyyy/MM/dd";
             this.dateL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateL.Location = new System.Drawing.Point(588, 57);
+            this.dateL.Location = new System.Drawing.Point(612, 51);
             this.dateL.Name = "dateL";
-            this.dateL.Size = new System.Drawing.Size(200, 20);
+            this.dateL.Size = new System.Drawing.Size(107, 20);
             this.dateL.TabIndex = 8;
             this.dateL.Value = new System.DateTime(2019, 2, 2, 0, 0, 0, 0);
             this.dateL.ValueChanged += new System.EventHandler(this.dateL_ValueChanged);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(713, 83);
+            this.button3.Location = new System.Drawing.Point(725, 47);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 24);
             this.button3.TabIndex = 9;
             this.button3.Text = "OK";
             this.button3.UseVisualStyleBackColor = true;

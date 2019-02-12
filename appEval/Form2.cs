@@ -37,7 +37,7 @@ namespace appEval
             foreach (candidature c in DAOcandidature.AfficherCandidature(DAOcandidature.selectlibE(listBox1.Text)))
             {
                 
-                listBox2.Items.Add(c.GetCodeCandidat());
+                listBox2.Items.Add(c.Nom_prenom);
                 
             }
             
@@ -72,7 +72,8 @@ namespace appEval
 
         private void listeEval_Click(object sender, EventArgs e)
         {
-            listeEval eval = new listeEval();
+            int ev1 = DAOcandidature.selectlibE(listBox1.Text);
+            listeEval eval = new listeEval(ev1);
             eval.Show();
         }
 
@@ -94,6 +95,11 @@ namespace appEval
             DAOoffre.definirDateLimit(d, lib);
 
             MessageBox.Show("Date limite ajoutée", "Date", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

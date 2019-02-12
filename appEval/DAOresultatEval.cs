@@ -8,7 +8,7 @@ using Npgsql;
 namespace appEval
 {
     class DAOresultatEval
-    {        public static Dictionary<string, double> afficherMoy()
+    {        public static Dictionary<string, double> afficherMoy(int idoffre)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
             Dictionary<string, double> moy = new Dictionary<string, double>();
@@ -17,7 +17,7 @@ namespace appEval
                 conn.Open();
                 // Retrieve all rows
                 using (var cmd = new NpgsqlCommand(
-                    "SELECT C.nom_prenom, AVG(note) as note FROM candidature C INNER JOIN evaluation ON C.codecandidat = evaluation.codecandidat INNER JOIN noter ON evaluation.idevaluation = noter.idevaluation GROUP BY C.codecandidat order by note desc ", conn)) 
+                    "SELECT C.nom_prenom, AVG(note) as note FROM candidature C INNER JOIN evaluation ON C.codecandidat = evaluation.codecandidat INNER JOIN noter ON evaluation.idevaluation = noter.idevaluation WHERE C.codeEmploi = " + idoffre+ " GROUP BY C.codecandidat order by note desc ", conn)) 
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {

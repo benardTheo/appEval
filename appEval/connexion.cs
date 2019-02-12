@@ -97,7 +97,7 @@ namespace appEval
             }
             return 0;
         }
-        public static int selectCodeOffre(string lib)
+        public static string selectLibOffre(string code)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval;";
 
@@ -106,15 +106,15 @@ namespace appEval
                 conn.Open();
 
                 // Retrieve all rows
-                using (var cmd = new NpgsqlCommand("SELECT codeEmploi FROM offre_emploi WHERE libelle = '" + lib + "';", conn))
+                using (var cmd = new NpgsqlCommand("SELECT libelle  FROM offre_emploi WHERE  codeEmploi = '" + code + "';", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
-                        Console.WriteLine(reader.GetInt32(0));
-                        return reader.GetInt32(0);
+                        Console.WriteLine(reader.GetString(0));
+                        return reader.GetString(0);
                     }
             }
-            return 0;
+            return "";
 
         }
 

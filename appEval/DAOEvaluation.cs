@@ -14,7 +14,7 @@ namespace appEval
 
         }
 
-        public static void insertEvaluation(string nom, string bonus, string comm, string idCa)
+        public static void insertEvaluation(string nom, string bonus, string comm, int idCa)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
             DateTime date = new DateTime();
@@ -37,10 +37,10 @@ namespace appEval
             }
 
         }
-        public static void insertNote(int id, int idC, int note)
+        public static void insertNote(int id, int idC, int note , int bonus)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=appEval";
-
+            int noteF = note + bonus;
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
@@ -51,7 +51,7 @@ namespace appEval
                 {
 
                     cmd.Connection = conn;
-                    cmd.CommandText = "INSERT INTO Noter(idEvaluation ,idCritere,note) VALUES( " + id + "," + idC + "," + note + ")";
+                    cmd.CommandText = "INSERT INTO Noter(idEvaluation ,idCritere,note) VALUES( " + id + "," + idC + "," + noteF + ")";
 
 
                     cmd.ExecuteNonQuery();

@@ -22,8 +22,8 @@ namespace appEval
             {
                 listBox1.Items.Add(c.LibelleCritere);
             }
-            textBox1.Text = id.ToString() ;
-            textBox3.Text = idCa;
+            label4.Text = idCa;
+            label5.Text;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -58,12 +58,13 @@ namespace appEval
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int bonus = int.Parse(comboBox2.Text);
            int id_crit = connexion.selectIdC(listBox1.Text);
            int note1 = int.Parse(note.Text);
            int coeff =  DAOEvaluation.coefEtCrit(id_crit,note1);
-           DAOEvaluation.insertEvaluation(textBox1.Text, comboBox2.Text, textBox2.Text, textBox3.Text);
+           DAOEvaluation.insertEvaluation(textBox1.Text, comboBox2.Text, textBox2.Text, DAOcandidature.idNP(label4.Text));
            int noteF = coeff * note1;
-           DAOEvaluation.insertNote(DAOEvaluation.selectIDEval(),connexion.selectIdC(listBox1.Text) ,noteF);
+           DAOEvaluation.insertNote(DAOEvaluation.selectIDEval(),connexion.selectIdC(listBox1.Text) ,noteF, bonus);
 
 
             MessageBox.Show("Evaluation", "Evaluation faite", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
@@ -86,6 +87,16 @@ namespace appEval
         }
 
         private void Evaluation_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

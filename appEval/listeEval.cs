@@ -12,9 +12,12 @@ namespace appEval
 {
     public partial class listeEval : Form
     {
-        public listeEval()
+        public listeEval(int idOffre)
         {
             InitializeComponent();
+
+            label2.Text = connexion.selectLibOffre(idOffre.ToString());
+
             this.dataGridView1.Rows.Add(4);
 
             this.dataGridView1[0,0].Value = "1";
@@ -23,7 +26,7 @@ namespace appEval
             this.dataGridView1[0, 3].Value = "4";
             this.dataGridView1[0, 4].Value = "5";
             Dictionary<string, double> moy = new Dictionary<string, double>();
-            moy = DAOresultatEval.afficherMoy();
+            moy = DAOresultatEval.afficherMoy(idOffre);
             int i = 0;
             foreach(KeyValuePair<string, double> elem in moy)
             {
@@ -50,6 +53,16 @@ namespace appEval
         */
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
